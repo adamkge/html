@@ -22,6 +22,7 @@ var lives = 3;
 var isMenu = true;
 var isGameOver = false;
 var basicLevel = [];
+var currentLevel = "level1";
 
 var level1 = JSON.parse(level1x);
 for (var i = 0; i < level1.bricks.length; i++) {
