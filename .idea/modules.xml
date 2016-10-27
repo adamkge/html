@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/HelloWorldhrml.iml" filepath="$PROJECT_DIR$/HelloWorldhrml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/html.iml" filepath="$PROJECT_DIR$/html.iml" />
     </modules>
   </component>
 </project>
