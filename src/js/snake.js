@@ -23,6 +23,7 @@ var isMenu = true;
 var isGameOver = false;
 var basicLevel = [];
 var currentLevel = "level1";
+var level2;
 
 var level1 = JSON.parse(level1x);
 for (var i = 0; i < level1.bricks.length; i++) {
@@ -99,8 +100,14 @@ function collisionDetection() {
                     b.status = 0;
                     score++;
                     if(score == brickRowCount*brickColumnCount) {
-                        alert("YOU WIN, CONGRATS!");
-                        document.location.reload();
+                        if(currentLevel == level1) {
+                            level2 = JSON.parse(level2x);
+                            currentLevel = level2;
+                        }
+                        else {
+                            alert("YOU WIN, CONGRATS!");
+                            document.location.reload();
+                        }
                     }
                 }
             }
