@@ -38,6 +38,15 @@ document.addEventListener("keyup", keyUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler, false);
 document.addEventListener("click", mouseClickHandler, false);
 
+function setUpLevel(level) {
+    for (var i = 0; i < level.bricks.length; i++) {
+        basicLevel[i] = [];
+        for (var j = 0; j < level.bricks[i].brickRow.length; j++) {
+            basicLevel[i][j]= {x: level.bricks[i].brickRow[j].x, y: level.bricks[i].brickRow[j].y, status: level.bricks[i].brickRow[j].status, color: level.bricks[i].brickRow[j].color };
+        }
+    }
+}
+
 function keyDownHandler(e) {
     if(e.keyCode == 39) {
         rightPressed = true;
@@ -103,6 +112,7 @@ function collisionDetection() {
                         if(currentLevel == level1) {
                             level2 = JSON.parse(level2x);
                             currentLevel = level2;
+                            setUpLevel(level2);
                         }
                         else {
                             alert("YOU WIN, CONGRATS!");
@@ -238,26 +248,36 @@ function draw() {
     if(y + dy < ballRadius) {
         dy = -dy;
     }
+    else if(y + dy > canvas.height-ballRadius-paddleHeight && x > paddleX &&  x < paddleX + paddleWidth/2) {
+        //if() {
+
+        //}
+        dy = -dy;
+        if(dx > 0) {
+            dx = -dx;
+        }
+    }
+    else if(y + dy > canvas.height-ballRadius-paddleHeight && x > paddleX + + paddleWidth/2&&  x < paddleX + paddleWidth) {
+        dy = -dy;
+        if(dx < 0) {
+            dx = -dx;
+        }
+    }
     else if(y + dy > canvas.height-ballRadius) {
-        if(x > paddleX && x < paddleX + paddleWidth) {
-            dy = -dy;
+        lives--;
+        if(!lives) {
+            isGameOver = true;
+            isMenu = true;
+            drawMenu();
+            return;
+
         }
         else {
-            lives--;
-            if(!lives) {
-                isGameOver = true;
-                isMenu = true;
-                drawMenu();
-                return;
-
-            }
-            else {
-                x = canvas.width/2;
-                y = canvas.height-30;
-                dx = 4;
-                dy = -4;
-                paddleX = (canvas.width-paddleWidth)/2;
-            }
+            x = canvas.width/2;
+            y = canvas.height-30;
+            dx = 4;
+            dy = -4;
+            paddleX = (canvas.width-paddleWidth)/2;
         }
     }
 
