@@ -1,0 +1,71 @@
+/*.box1{*/
+    /*float: left;*/
+    /*width: 20px;*/
+    /*height: 20px;*/
+    /*margin: 5px;*/
+    /*border: 1px;*/
+    /*background: #13b4ff;*/
+/*}*/
+/*.box2{*/
+    /*float: left;*/
+    /*width: 40px;*/
+    /*height: 40px;*/
+    /*margin: 5px;*/
+    /*border: 1px;*/
+    /*background: #ab3fdd;*/
+/*}*/
+/*.box3{*/
+    /*float: left;*/
+    /*width: 20px;*/
+    /*height: 20px;*/
+    /*margin: 5px;*/
+    /*border: 1px;*/
+    /*background: #ae163e;*/
+/*}*/
+
+.container{
+
+}
+
+.foo {
+    align-self:center;
+    display: inline-block;
+    margin: 5px;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.blue {
+    background: #13b4ff;
+    width: 20px;
+    height: 20px;
+}
+
+.blue:hover{
+    background: #761c19;
+    width: 60px;
+    height: 60px;
+}
+
+.purple {
+    background: #ab3fdd;
+    width: 30px;
+    height: 40px;
+}
+
+.purple:hover{
+    background: #888888;
+    width: 40px;
+    height: 40px;
+}
+
+.wine {
+    background: #ae163e;
+    width: 20px;
+    height: 30px;
+}
+
+.wine:hover {
+    background: #419641;
+    width: 90px;
+    height: 90px;
+}
