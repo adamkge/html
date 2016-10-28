@@ -249,9 +249,9 @@ function draw() {
         dy = -dy;
     }
     else if(y + dy > canvas.height-ballRadius-paddleHeight && x > paddleX &&  x < paddleX + paddleWidth/2) {
-        //if() {
+        if((x - paddleX)/(paddleWidth/2) > 0 && (x - paddleX)/(paddleWidth/2) <0.3) {
 
-        //}
+        }
         dy = -dy;
         if(dx > 0) {
             dx = -dx;
