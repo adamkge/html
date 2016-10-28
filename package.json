@@ -42,5 +42,22 @@
     "build": "gulp build",
     "test": "gulp archive && mocha --reporter spec --timeout 5000"
   },
-  "version": "5.3.0"
+  "version": "5.3.0",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamkge/html.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/adamkge/html/issues"
+  },
+  "description": "",
+  "dependencies": {
+    "jquery": "^1.12.0"
+  }
 }
