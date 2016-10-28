@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<style>
+    #purple {
+        background-color: purple;
+        color: white;
+    }
+    .green{
+        background-color: green;
+        color: white;
+    }
+</style>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -18,12 +29,15 @@
     </thead>
     <tbody>
     <tr>
-        <td colspan="2" rowspan="2" align="center">1</td>
+        <td style="background-color: darkblue; color: white">1</td>
+        <td>2</td>
         <td>3</td>
         <td>4</td>
         <td>5</td>
     </tr>
     <tr>
+        <td>6</td>
+        <td id="purple">7</td>
         <td>8</td>
         <td>9</td>
         <td>10</td>
@@ -31,7 +45,7 @@
     <tr>
         <td>11</td>
         <td>12</td>
-        <td>13</td>
+        <td class="green">13</td>
         <td>14</td>
         <td>15</td>
     </tr>
@@ -54,4 +68,6 @@
     </tfoot>
 </table>
 </body>
+
+
 </html>
