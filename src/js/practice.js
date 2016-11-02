@@ -20,14 +20,23 @@ var t1 = [{
         "id": 101,
         "name": "fefwf"
     }];
+var t2 = [1,2,3,4,5,6,7,8,9,10];
 var at = {};
 var obj2 = {};
+var obj3 = {};
+var crazy = {};
 t1.forEach(function (e) {
     at[e.id] = e;
 });
 var at2 = t1.map(function(e){
     obj2[e.id] = e;
     return obj2;
+});
+var rdm = t1.map(function(e){
+    return obj3[e.id] = {id: e.id, name: Math.random()};;
+});
+t1.forEach(function (e) {
+    at[e.id] = e;
 });
 function writeNumbers(n)
 {
@@ -58,7 +67,8 @@ function isEqual() {
     }
 
     document.write("at[101]: " + JSON.stringify(at[101]));
-    document.write("at2[101]: " + JSON.stringify(at[101]));
+    document.write("obj2[101]: " + JSON.stringify(obj2[101]));
+    document.write("obj3[101]: " + JSON.stringify(obj3[101]));
 }
 isEqual();
 
