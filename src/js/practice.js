@@ -21,8 +21,13 @@ var t1 = [{
         "name": "fefwf"
     }];
 var at = {};
+var obj2 = {};
 t1.forEach(function (e) {
     at[e.id] = e;
+});
+var at2 = t1.map(function(e){
+    obj2[e.id] = e;
+    return obj2;
 });
 function writeNumbers(n)
 {
@@ -53,6 +58,7 @@ function isEqual() {
     }
 
     document.write("at[101]: " + JSON.stringify(at[101]));
+    document.write("at2[101]: " + JSON.stringify(at[101]));
 }
 isEqual();
 
