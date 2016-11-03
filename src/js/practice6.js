@@ -22,7 +22,6 @@ function get(url) {
             }
         };
 
-        console.log("valami");
         // Handle network errors
         req.onerror = function() {
             reject(Error("Network Error"));
@@ -35,14 +34,31 @@ function get(url) {
 function loadThatShit() {
     get('data.json').then(function (response) {
         document.getElementById("input").innerHTML = response;
-        return response;
-    }).then(function(response){
+        alert("First Done!");
+        return get('data2.json');
+    }).then(function (response) {
         document.getElementById("input2").innerHTML = response;
-        return response;
+        alert("Second Done!");
+        return get('data3.json');
     }).then(function (response) {
         document.getElementById("input3").innerHTML = response;
-    }).then(function () {
-        alert("Done!");
+        alert("Third Done!");
+    });
+}
+
+
+function loadAllThatShit() {
+    get('data.json').then(function (response) {
+        document.getElementById("input").innerHTML = response;
+        alert("First Done!");
+        return get('data2.json');
+    }).then(function (response) {
+        document.getElementById("input2").innerHTML = response;
+        alert("Second Done!");
+        return get('data3.json');
+    }).then(function (response) {
+        document.getElementById("input3").innerHTML = response;
+        alert("Third Done!");
     });
 }
 
