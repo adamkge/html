@@ -1,9 +1,9 @@
 var input = document.getElementById("input");
 input.addEventListener("click", load);
 /*var input2 = document.getElementById("input2");
-input.addEventListener("loadend", load2);
-var input3 = document.getElementById("input3");
-input.addEventListener("loadend", load3);*/
+ input.addEventListener("loadend", load2);
+ var input3 = document.getElementById("input3");
+ input.addEventListener("loadend", load3);*/
 
 function load() {
     var request = new XMLHttpRequest();
