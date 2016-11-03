@@ -1,5 +1,5 @@
 var input = document.getElementById("input");
-input.addEventListener("click", loadThatShit);
+input.addEventListener("click", loadAllThatShit);
 
 function get(url) {
     // Return a new promise.
@@ -48,17 +48,13 @@ function loadThatShit() {
 
 
 function loadAllThatShit() {
-    get('data.json').then(function (response) {
-        document.getElementById("input").innerHTML = response;
-        alert("First Done!");
-        return get('data2.json');
-    }).then(function (response) {
-        document.getElementById("input2").innerHTML = response;
-        alert("Second Done!");
-        return get('data3.json');
-    }).then(function (response) {
-        document.getElementById("input3").innerHTML = response;
-        alert("Third Done!");
+    Promise.all([get('data.json'), get('data2.json'),get('data3.json')])
+    .then(function (results) {
+        document.getElementById("input").innerHTML = results[0];
+        document.getElementById("input2").innerHTML = results[1];
+        document.getElementById("input3").innerHTML = results[2];
+        alert("All Done!");
+
     });
 }
 
