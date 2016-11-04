@@ -3,7 +3,7 @@
  */
 
 $(function () {
-        loadJson("json10");
+        loadJson("json10000");
         // loadJson("json100");
         // loadJson("json1000");
         // loadJson("json10000");
@@ -24,7 +24,8 @@ function loadJson(filename) {
                     { data: "gender" },
                     { data: "eyeColor" },
                     { data: "about" }
-                    ]
+                    ],
+                bPaginate: false
             })
         },
         async: true
