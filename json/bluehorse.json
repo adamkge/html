@@ -1,0 +1,13 @@
+{
+    "animals" :  [
+        {
+            "animal" : "Ed"
+        },
+        {
+            "animal" : "Edd"
+        },
+        {
+            "animal" : "Eddy"
+        }
+    ]
+}
