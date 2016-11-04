@@ -63,6 +63,7 @@
   },
   "description": "",
   "dependencies": {
+    "datatables": "^1.10.12",
     "jquery": "^1.12.0"
   }
 }
