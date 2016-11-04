@@ -1,11 +1,11 @@
 var $select = $('#firstSelect');
 $(function () {
     $.ajax({
-        url: '../../data.json',
+        url: '../../json/color.json',
         success: function (result) {
             $($.parseJSON(result)).map(function () {
                 return $('<option>').val(this.value).text(this.label);
-            }).appendTo('#firstSelect');;
+            }).appendTo('#firstSelect');
         },
         async: true
     });
