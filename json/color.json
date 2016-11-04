@@ -1,0 +1,19 @@
+{
+    "colors" :  [
+        {
+            "color" : "Red"
+        },
+        {
+            "color" : "Blue"
+        },
+        {
+            "color" : "Green"
+        },
+        {
+            "color" : "Yellow"
+        },
+        {
+            "color" : "Pink"
+        }
+    ]
+}
