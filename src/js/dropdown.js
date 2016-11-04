@@ -1,23 +1,13 @@
-var json = (function () {
-    var json = null;
-    $.ajax({
-        'async': true,
-        'global': false,
-        'url': '../../json/color.json',
-        'dataType': "json",
-        'success': function (data) {
-            json = data;
-        }
-    });
-    return json;
-})();
-
 var $select = $('#firstSelect');
-//$select.find('option').remove();
-$.each(json,function(key, value)
-{
-    $select.append('<option value=' + key + '>' + value + '</option>');
+$(function () {
+    $.ajax({
+        url: '../../data.json',
+        success: function (result) {
+            $($.parseJSON(result)).map(function () {
+                return $('<option>').val(this.value).text(this.label);
+            }).appendTo('#firstSelect');;
+        },
+        async: true
+    });
+    alert("Done");
 });
-
-
-//$('#firstSelect').
