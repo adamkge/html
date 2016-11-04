@@ -31,20 +31,20 @@ function get(url) {
         req.send();
     });
 }
-function loadThatShit() {
-    get('data.json').then(function (response) {
-        document.getElementById("input").innerHTML = response;
-        alert("First Done!");
-        return get('data2.json');
-    }).then(function (response) {
-        document.getElementById("input2").innerHTML = response;
-        alert("Second Done!");
-        return get('data3.json');
-    }).then(function (response) {
-        document.getElementById("input3").innerHTML = response;
-        alert("Third Done!");
-    });
-}
+// function loadThatShit() {
+//     get('data.json').then(function (response) {
+//         document.getElementById("input").innerHTML = response;
+//         alert("First Done!");
+//         return get('data2.json');
+//     }).then(function (response) {
+//         document.getElementById("input2").innerHTML = response;
+//         alert("Second Done!");
+//         return get('data3.json');
+//     }).then(function (response) {
+//         document.getElementById("input3").innerHTML = response;
+//         alert("Third Done!");
+//     });
+// }
 
 
 function loadAllThatShit() {
@@ -53,8 +53,7 @@ function loadAllThatShit() {
         document.getElementById("input").innerHTML = results[0];
         document.getElementById("input2").innerHTML = results[1];
         document.getElementById("input3").innerHTML = results[2];
-        alert("All Done!");
-
     });
+    alert("All Done!");
 }
 
