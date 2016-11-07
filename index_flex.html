@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Flexing the size and position with Flexbox</title>
+    <style>
+        html {
+            height: 100%;
+            font-size: 62.5%;
+        }
+        body {
+            font: 1.4rem helvetica, sans-serif;
+
+            margin: 0;
+            height: 100%;
+            width: 100%; /* width needed for Firefox */
+
+            background: white url(BG.jpg) repeat center;
+
+            display: -moz-box; display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+
+            -moz-box-align: center; -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+
+            -moz-box-pack: center; -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+        }
+        body:hover{
+            background: white url(cool.jpg)  center;
+            background-repeat: no-repeat;
+        }
+        section {
+            height: 250px;
+            margin: 0;
+
+            display: -moz-box; display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+
+            /*	set layout direction for child elements (h1) to vertical
+                Syntax unchanged :) */
+            -moz-box-orient: block-axis; -webkit-box-orient: block-axis;
+            -webkit-flex-flow: column; -ms-flex-flow: column;
+            flex-flow: column;
+
+            /* align child elements towards end (bottom) of the vertical axis */
+            -moz-box-pack: end; -webkit-box-pack: end;
+            -ms-flex-pack: end;
+            -webkit-justify-content: flex-end;
+            justify-content: flex-end;
+
+            /* make 1 flex unit wide */
+            -moz-box-flex: 1; -webkit-box-flex: 1;
+            -webkit-flex: 1; -ms-flex: 1;
+            flex: 1;
+
+            color: silver;
+            background-color: hsla(0, 100%, 0%, .9);
+            background-size:  auto 100%;
+            box-shadow: 0 0 1.5rem hsla(0, 100%, 0%, .4);
+        }
+        h1 {
+            font-size: 1.3rem;
+            font-weight: normal;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 0 0 1.2rem hsla(0, 100%, 0%, .8);
+            color: white;
+            background-color: hsla(0, 100%, 0%, .7);
+            margin: 0;
+            padding: .8rem;
+        }
+
+        /* add background images to each section */
+        section:nth-of-type(1) {
+            background: white url(cat1.jpg) repeat center;
+        }
+        section:nth-of-type(2) {
+            background: white url(cat2.jpg) repeat center;
+
+        }
+        section:nth-of-type(3) {
+            background: white url(cat3.jpg) repeat center left;
+        }
+        section:nth-of-type(4) {
+            background: white url(cat4.jpg) repeat center;
+        }
+
+        section:nth-of-type(5) {
+            background: white url(dog1.jpg) repeat center;
+        }
+        section:hover h1 {
+            display: block;
+        }
+        section h1 {
+            display: none;
+        }
+
+        section:hover {
+            /* take up two flex units when hovering */
+            -moz-box-flex: 2; -webkit-box-flex: 2;
+            -webkit-flex: 2; -ms-flex: 2;
+            flex: 2;
+        }
+        h2 {
+            font-size: 1.3rem;
+            font-weight: normal;
+            text-align: center;
+            text-shadow: 0 0 1.2rem hsla(0, 100%, 0%, .8);
+            color: white;
+            background-color: hsla(0, 100%, 0%, .7);
+            margin: 0;
+            padding: .8rem;
+        }
+
+        /* add background images to each section */
+        section:nth-of-type(1) {
+            background: white url(cat1.jpg) repeat center;
+        }
+        section:nth-of-type(2) {
+            background: white url(cat2.jpg) repeat center;
+
+        }
+        section:nth-of-type(3) {
+            background: white url(cat3.jpg) repeat center left;
+        }
+        section:nth-of-type(4) {
+            background: white url(cat4.jpg) repeat center;
+        }
+
+        section:nth-of-type(5) {
+            background: white url(dog1.jpg) repeat center;
+        }
+        section:hover h1 {
+            display: block;
+        }
+        section h1 {
+            display: none;
+        }
+
+        section:hover {
+            /* take up two flex units when hovering */
+            -moz-box-flex: 2; -webkit-box-flex: 2;
+            -webkit-flex: 2; -ms-flex: 2;
+            flex: 2;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>The cutest kittycat:</h1>
+</header>
+<section>
+    <h2>Tom</h2>
+</section>
+<section>
+    <h2>Garfield</h2>
+</section>
+<section>
+    <h2>Snowball</h2>
+</section>
+<section>
+    <h2>Ser Pounce</h2>
+</section>
+<section>
+    <h2>Frakk</h2>
+</section>
+</body>
+</html>
