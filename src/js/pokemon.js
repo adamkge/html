@@ -1,13 +1,13 @@
 var myList = document.getElementById('list');
 $( document ).ready(function() {
     $.ajax({
-        url: 'https://pokeapi.co/api/v2/pokemon/?limit=151',
+        url: '//pokeapi.co/api/v2/pokemon/?limit=151',
         success: function (result) {
             var pokemons = [];
             var images = [];
             for (var i = 0; i < result.results.length; i++) {
                 pokemons.push(result.results[i].name);
-                images.push("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+(i+1)+".png");
+                images.push("//raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+(i+1)+".png");
             }
             for(var i = 0; i < pokemons.length; i++) {
                 var opt = pokemons[i];
