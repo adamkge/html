@@ -20,26 +20,7 @@ $(document).ready(function () {
             }
             for (var i = 0; i < pokemons.length; i++) {
 
-                var tbody = document.createElement('tbody');
-                var tr = document.createElement('tr');
-                var td1 = document.createElement('td');
-                var td2 = document.createElement('td');
-                var td3 = document.createElement('td');
-                var text1 = document.createTextNode(pokemons[i].id);
-                var text2 = document.createTextNode(pokemons[i].name);
-                var img = document.createElement("img");
-                img.src = pokemons[i].url;
-                td1.className = "idtd";
-                td1.appendChild(text1);
-                tr.appendChild(td1);
-                td2.className = "nametd";
-                td2.appendChild(text2);
-                tr.appendChild(td2);
-                td3.className = "imagetd";
-                td3.appendChild(img);
-                tr.appendChild(td3);
-                tbody.appendChild(tr);
-                myTable.appendChild(tbody);
+                generateTable(pokemons[i]);
             }
         },
         async: true
@@ -95,4 +76,42 @@ function namesort(a, b) // string
     if (keyA > keyB) return 1;
     return 0;
 }
+function generateTable(pokemon) {
 
+    var tbody = document.createElement('tbody');
+
+    var td1 = document.createElement('td');
+    var td1 = document.createElement('td');
+    var td1 = document.createElement('td');
+    var tr = createTr(pokemon.id, pokemon.name, pokemon.url);
+    var text1 = document.createTextNode(pokemon.id);
+    var text2 = document.createTextNode(pokemon.name);
+    var img = document.createElement("img");
+    img.src = pokemon.url;
+    td1.className = "idtd";
+    td1.appendChild(text1);
+    tr.appendChild(td1);
+    td2.className = "nametd";
+    td2.appendChild(text2);
+    tr.appendChild(td2);
+    td3.className = "imagetd";
+    td3.appendChild(img);
+    tr.appendChild(td3);
+    tbody.appendChild(tr);
+    myTable.appendChild(tbody);
+}
+function createTr(td1, td2, td3) {
+    var tr = document.createElement('tr');
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    return tr;
+}
+function createTd(nodeType, className) {
+    var td = document.createElement('td');
+    td.className = className;
+    return td;
+}
+
+
+var tr = createtr(createtd(pokemonname) , createtd(id), createtd(img))
