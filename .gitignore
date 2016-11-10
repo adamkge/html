@@ -3,3 +3,16 @@ node_modules
 **/.idea/workspace.xml
 **/.idea/jsLibraryMappings.xml
 **/.idea/misc.xml
+
+/node_modules
+/dist
+/.tmp
+/.sass-cache
+/bower_components
+
+
+# IntelliJ
+/out/
+.idea/
+/target
+*.iml
