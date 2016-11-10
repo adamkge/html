@@ -13,15 +13,15 @@ $(document).ready(function () {
                 });
             }
 
-            // myTable.innerHTML = "";
             while (myTable.firstChild)
             {
                 myTable.removeChild(myTable.firstChild);
             }
+            var tbody = document.createElement('tbody');
             for (var i = 0; i < pokemons.length; i++) {
-
-                generateTable(pokemons[i]);
+                generateTable(pokemons[i], tbody);
             }
+            myTable.className = "table table-striped";
         },
         async: true
     });
@@ -76,27 +76,10 @@ function namesort(a, b) // string
     if (keyA > keyB) return 1;
     return 0;
 }
-function generateTable(pokemon) {
-
-    var tbody = document.createElement('tbody');
-
-    var td1 = document.createElement('td');
-    var td1 = document.createElement('td');
-    var td1 = document.createElement('td');
-    var tr = createTr(pokemon.id, pokemon.name, pokemon.url);
-    var text1 = document.createTextNode(pokemon.id);
-    var text2 = document.createTextNode(pokemon.name);
-    var img = document.createElement("img");
-    img.src = pokemon.url;
-    td1.className = "idtd";
-    td1.appendChild(text1);
-    tr.appendChild(td1);
-    td2.className = "nametd";
-    td2.appendChild(text2);
-    tr.appendChild(td2);
-    td3.className = "imagetd";
-    td3.appendChild(img);
-    tr.appendChild(td3);
+function generateTable(pokemon, tbody) {
+    var tr = createTr(createTag('td', 'idtd', pokemon.id),
+        createTag('td', 'nametd', pokemon.name),
+        createTag('img', 'imagetd', null, pokemon.url));
     tbody.appendChild(tr);
     myTable.appendChild(tbody);
 }
@@ -107,11 +90,17 @@ function createTr(td1, td2, td3) {
     tr.appendChild(td3);
     return tr;
 }
-function createTd(nodeType, className) {
-    var td = document.createElement('td');
-    td.className = className;
+function createTag(createElementType, className, text, src) {
+    var td = document.createElement(createElementType);
+    td.className = className+" col-md-3";
+    if(typeof text !== "undefined") {
+        td.textContent = text;
+        td.value = text;
+    }
+    if(typeof src !== "undefined") {
+        td.src = src;
+    }
     return td;
 }
 
 
-var tr = createtr(createtd(pokemonname) , createtd(id), createtd(img))
