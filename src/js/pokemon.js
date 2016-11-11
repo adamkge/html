@@ -21,7 +21,6 @@ $(document).ready(function () {
             for (var i = 0; i < pokemons.length; i++) {
                 generateTable(pokemons[i], tbody);
             }
-            myTable.className = "table table-striped";
         },
         async: true
     });
@@ -91,14 +90,16 @@ function createTr(td1, td2, td3) {
     return tr;
 }
 function createTag(createElementType, className, text, src) {
-    var td = document.createElement(createElementType);
-    td.className = className+" col-md-3";
+    var td = document.createElement('td');
+    td.className = className;
     if(typeof text !== "undefined") {
         td.textContent = text;
         td.value = text;
     }
     if(typeof src !== "undefined") {
-        td.src = src;
+        var img = document.createElement('img');
+        img.src = src;
+        td.appendChild(img);
     }
     return td;
 }
