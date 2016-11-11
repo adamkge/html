@@ -68,7 +68,7 @@ gulp.task('clean', function (done) {
 
 gulp.task('copy', [
     'copy:.htaccess',
-    'copy:index.html',
+    'copy:index2.html',
     'copy:jquery',
     'copy:license',
     'copy:main.css',

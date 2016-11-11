@@ -2,26 +2,33 @@
 <html lang="en">
 <head>
     <link href="src/css/pokemon.css" rel="stylesheet" type="text/css" />
-    <link href="src/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js">
+    </script>
+    <script src="src/js/pokemon_angular.js"></script>
     <meta charset="UTF-8">
     <title>Pokemon</title>
 </head>
-<body>
+<body  ng-app="pokeModule">
 
-<div class="container">
+<div ng-controller="myCtrl">
     <div class="table">
-        <select id="select">
-            <option value="id">Id</option>
-            <option value="name">Name</option>
-        </select>
+        <div>
+            <select selected='name' ng-model="selected" id="select">
+                <option value="name" >Name</option>
+                <option value="id">Id</option>
+            </select>
+        </div>
+        {{sortingOrder}},{{orderBy}}
         <table id="table">
-
+            <tr ng-repeat="item in pokemons | orderBy:selected">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td><img src={{item.url}}></td>
+            </tr>
         </table>
     </div>
 </div>
 
 </body>
-<script src="src/js/jquery.min.js"></script>
-<script src="src/js/bootstrap.min.js"></script>
-<script src="src/js/pokemon.js"></script>
 </html>
+
