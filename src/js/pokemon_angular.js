@@ -20,11 +20,13 @@ app.controller("myCtrl", function ($scope, $http) {
 
     $scope.names = ["Id", "Name"];
 
-    $scope.go = function(item)
-    {
+    $scope.go = function (item) {
         $http.get("//pokeapi.co/api/v2/pokemon/" + item.id, {jsonpCallbackParam: 'callback'})
             .success(function (data) {
                 console.log(data);
+
+                alert("height: " + data.height + "\n" +
+                     "base exp: " + data.base_experience + "\n");
             });
     };
 
