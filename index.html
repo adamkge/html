@@ -19,9 +19,8 @@
                 <option value="id">Id</option>
             </select>
         </div>
-        {{sortingOrder}},{{orderBy}}
         <table id="table">
-            <tr ng-repeat="item in pokemons | orderBy:selected">
+            <tr ng-repeat="item in pokemons | orderBy:selected"  ng-click="go(item)">
                 <td>{{item.id}}</td>
                 <td>{{item.name}}</td>
                 <td><img src={{item.url}}></td>
