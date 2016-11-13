@@ -6,12 +6,14 @@
     /</script>-->
     <script src="src/js/angular.min.js"></script>
     <script src="src/js/pokemon_angular.js"></script>
+    <script type="text/javascript" src="src/js/pokemon_animation.js"></script>
     <meta charset="UTF-8">
     <title>Pokemon</title>
 </head>
 <body  ng-app="pokeModule">
 
-<div ng-controller="myCtrl">
+<div ng-controller="myCtrl" animation tabindex="1" ng-keypress="changeCount()">
+    <div ng-repeat="sprite in sprites" ash-position="sprite"></div>
     <div class="table">
         <div>
             <select selected='name' ng-model="selected" id="select">
