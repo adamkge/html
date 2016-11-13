@@ -27,23 +27,23 @@ tbody tr:nth-child(odd) {
 .container {
     text-align: center;
 }
-.styled-select {
-    width:100px;
-    overflow: hidden;
-    background: #F8F8F8;
-    border: 1px solid #DDDDDD;
-    height: 30px;
-    border-radius:2px;
+.ball {
+    display: inline-block;
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    border: 0px solid black;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 00px;
+
+    background-repeat: no-repeat;
+    background-image: url(../../src/img/ash1.png);
 }
 
-.styled-select select {
-    width: 100%;
-    border: 0;
-    line-height: 1.5;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-indent: 0.01px;
-    text-overflow: '';
-    appearance: none;
-    //background: transparent url("/img/smart_arrows.png") no-repeat scroll 97% 8px;
+#ash {
+	display: inline-block;
+	position: absolute;
+    width: 50px;
+    height: 100px;
 }
